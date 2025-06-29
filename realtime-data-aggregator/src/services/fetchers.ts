@@ -1,10 +1,11 @@
-import axios from 'axios';
+import { axiosWithBackoff } from './retry';
 
 export async function fetchDexScreener() {
   try {
-    const { data } = await axios.get(
-      'https://api.dexscreener.com/latest/dex/search?q=sol'
-    );
+    const { data } = await axiosWithBackoff({
+      url: 'https://api.dexscreener.com/latest/dex/search?q=sol',
+      method: 'GET'
+    });
     return data?.pairs?.map((p: any) => ({
       token_address: p.baseToken.address,
       token_name: p.baseToken.name,
@@ -20,9 +21,10 @@ export async function fetchDexScreener() {
 
 export async function fetchGeckoTerminal() {
   try {
-    const { data } = await axios.get(
-      'https://api.geckoterminal.com/api/v2/networks/solana/tokens'
-    );
+    const { data } = await axiosWithBackoff({
+      url: 'https://api.geckoterminal.com/api/v2/networks/solana/tokens',
+      method: 'GET'
+    });
     return data?.data?.map((t: any) => ({
       token_address: t.id,
       token_name: t.attributes.name,
