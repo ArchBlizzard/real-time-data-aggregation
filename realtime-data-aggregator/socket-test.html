@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.io Test</title>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h2>Socket.io WebSocket Test</h2>
+    <div id="status">Connecting...</div>
+    <script>
+      const socket = io("ws://localhost:3000");
+      socket.on("connect", () => {
+        document.getElementById("status").innerText = "Connected!";
+        console.log("Connected to Socket.io server");
+      });
+      socket.on("disconnect", () => {
+        document.getElementById("status").innerText = "Disconnected!";
+        console.log("Disconnected from server");
+      });
+      // Listen for token updates (if implemented)
+      socket.on("token_update", (data) => {
+        console.log("Token update:", data);
+      });
+    </script>
+  </body>
+</html>
