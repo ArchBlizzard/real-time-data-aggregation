@@ -1,5 +1,5 @@
 import { getRedisClient } from './cache';
-import { fetchDexScreener, fetchGeckoTerminal } from './fetchers';
+import { fetchDexScreener /*, fetchGeckoTerminal, fetchJupiterPrices */ } from './fetchers';
 
 const CACHE_KEY = 'tokens';
 const TTL_SECONDS = 30;
@@ -12,13 +12,30 @@ export async function getCachedTokens() {
 }
 
 export async function fetchAndCacheTokens() {
-  // Fetch from both APIs in parallel
-  const [dexScreenerData, geckoTerminalData] = await Promise.all([
-    fetchDexScreener(),
-    fetchGeckoTerminal()
-  ]);
-  // Merge tokens by token_address
-  const merged = mergeTokens([ ...dexScreenerData, ...geckoTerminalData ]);
+  // Fetch only from DexScreener
+  const dexScreenerData = await fetchDexScreener();
+  // If you want to add back other sources, use:
+  // const [dexScreenerData, geckoTerminalData] = await Promise.all([
+  //   fetchDexScreener(),
+  //   fetchGeckoTerminal()
+  // ]);
+  // const allTokens = [ ...dexScreenerData, ...geckoTerminalData ];
+  const allTokens = [ ...dexScreenerData ];
+
+  // If you want to add back Jupiter, use:
+  // const tokenIds = allTokens.map(t => t.token_address).filter(Boolean);
+  // const jupiterPrices = await fetchJupiterPrices(tokenIds);
+  // const merged = mergeTokens(allTokens).map(token => {
+  //   const jup = jupiterPrices[token.token_address];
+  //   return {
+  //     ...token,
+  //     jupiter_price: jup?.price || null
+  //   };
+  // });
+
+  // For now, just merge DexScreener tokens
+  const merged = mergeTokens(allTokens);
+
   const redis = getRedisClient();
   await redis.set(CACHE_KEY, JSON.stringify(merged), 'EX', TTL_SECONDS);
   return merged;
@@ -30,7 +47,6 @@ function mergeTokens(tokens: any[]) {
     if (!merged[t.token_address]) {
       merged[t.token_address] = t;
     } else {
-      // Merge logic: prefer DexScreener data, or combine fields as needed
       merged[t.token_address] = {
         ...merged[t.token_address],
         ...t,
