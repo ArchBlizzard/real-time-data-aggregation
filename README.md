@@ -118,7 +118,7 @@ Use the included Postman collection (postman_collection.json) to test all endpoi
 
 ## Demo Video
 
-- [Demo Video](#https://drive.google.com/file/d/1eY_ImSKYNch4e9eCVm8cYoR6zzO_VHJ8/view?usp=sharing) 
+- [Demo Video](https://drive.google.com/file/d/1eY_ImSKYNch4e9eCVm8cYoR6zzO_VHJ8/view?usp=sharing) 
 
 ## Design Decisions
 
