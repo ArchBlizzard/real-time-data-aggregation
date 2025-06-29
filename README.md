@@ -24,26 +24,6 @@ This service aggregates real-time meme coin data from multiple DEX sources (DexS
 - Socket.io (WebSocket)
 - Redis (ioredis client)
 - Axios (HTTP client)
-- Jest & Supertest (testing)
-
-## Project Structure
-
-
-realtime-data-aggregator/
-├── src/
-│   ├── index.ts              # Entry point (Express + Socket.io)
-│   ├── routes/
-│   │   └── tokens.ts         # REST API routes
-│   ├── services/
-│   │   ├── aggregator.ts     # Aggregation and caching logic
-│   │   ├── fetchers.ts       # DEX API fetchers
-│   │   └── cache.ts          # Redis client
-├── test/                     # Unit and integration tests
-├── package.json
-├── tsconfig.json
-├── .gitignore
-├── socket-test.html
-
 
 ## How to Run Locally
 
@@ -138,7 +118,7 @@ Use the included Postman collection (postman_collection.json) to test all endpoi
 
 ## Demo Video
 
-- [YouTube Demo Link](#) (add your 1-2 min demo video link here)
+- [Demo Video](#https://drive.google.com/file/d/1eY_ImSKYNch4e9eCVm8cYoR6zzO_VHJ8/view?usp=sharing) 
 
 ## Design Decisions
 
@@ -149,16 +129,9 @@ Use the included Postman collection (postman_collection.json) to test all endpoi
 - Filtering, sorting, and pagination are handled server-side for scalability.
 
 ## Testing
+
 ### API Testing
 - See example requests above.
 
 ### WebSocket Testing
 - Open socket-test.html in multiple browser tabs to see real-time updates.
-
----
-
-*Status:*  
-MVP backend is running with aggregation, caching, REST API, WebSocket server, filtering, sorting, pagination, and tests.  
-Ready for deployment and demo.
-
----
