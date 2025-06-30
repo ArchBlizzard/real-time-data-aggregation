@@ -1,7 +1,7 @@
 # Real-time Meme Coin Data Aggregation Service
 
 **Deployed to free hosting:**  
-[URL](https://real-time-data-aggregation.onrender.com/api/tokens)
+[https://real-time-data-aggregation.onrender.com/api/tokens](https://real-time-data-aggregation.onrender.com/api/tokens)
 
 ## Overview
 
@@ -31,48 +31,42 @@ This service aggregates real-time meme coin data from DexScreener, caches result
 ## How to Run Locally
 
 1. **Install dependencies:**
-```
-
-npm install
-
-```
+    ```sh
+    npm install
+    ```
 
 2. **Start Redis server** (if not already running):
-```
-
-redis-server
-
-```
+    ```sh
+    redis-server
+    ```
 
 3. **Build and start the server:**
-```
-
-npm run build
-npm start
-
-````
+    ```sh
+    npm run build
+    npm start
+    ```
 
 4. **Test REST API (Local):**
-- Fetch tokens:
-  ```
-  curl "http://localhost:3000/api/tokens"
-  ```
-- Force refresh:
-  ```
-  curl -X POST "http://localhost:3000/api/tokens/refresh"
-  ```
+    - Fetch tokens:
+      ```sh
+      curl "http://localhost:3000/api/tokens"
+      ```
+    - Force refresh:
+      ```sh
+      curl -X POST "http://localhost:3000/api/tokens/refresh"
+      ```
 
 5. **Test WebSocket:**
-- Open `socket-test.html` in your browser to connect via Socket.io.
-- Open multiple tabs to see real-time updates.
+    - Open `socket-test.html` in your browser to connect via Socket.io.
+    - Open multiple tabs to see real-time updates.
 
 ## API Endpoints
 
 - **GET /api/tokens**  
-Returns the list of aggregated tokens (from cache or fresh if cache expired).
+  Returns the list of aggregated tokens (from cache or fresh if cache expired).
 
 - **POST /api/tokens/refresh**  
-Forces a refresh from DEX APIs and updates the cache.
+  Forces a refresh from DEX APIs and updates the cache.
 
 ## API Testing
 
@@ -80,91 +74,75 @@ Use the included Postman collection (`postman_collection.json`) to test endpoint
 
 ---
 
-### 🔹 Example Requests - **Local**
+### Example Requests - **Local**
 
 - Fetch all tokens:  
-````
-
-curl "[http://localhost:3000/api/tokens](http://localhost:3000/api/tokens)"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens"
+    ```
 
 - Force refresh:  
-```
-
-curl -X POST "[http://localhost:3000/api/tokens/refresh](http://localhost:3000/api/tokens/refresh)"
-
-```
+    ```sh
+    curl -X POST "http://localhost:3000/api/tokens/refresh"
+    ```
 
 - Filter by period (e.g., 1 hour):  
-```
-
-curl "[http://localhost:3000/api/tokens?period=1h](http://localhost:3000/api/tokens?period=1h)"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens?period=1h"
+    ```
 
 - Sort by price (descending):  
-```
-
-curl "[http://localhost:3000/api/tokens?sortBy=price\_sol\&sortDir=desc](http://localhost:3000/api/tokens?sortBy=price_sol&sortDir=desc)"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens?sortBy=price_sol&sortDir=desc"
+    ```
 
 - Sort by volume (ascending):  
-```
-
-curl "[http://localhost:3000/api/tokens?sortBy=volume\_sol\&sortDir=asc](http://localhost:3000/api/tokens?sortBy=volume_sol&sortDir=asc)"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens?sortBy=volume_sol&sortDir=asc"
+    ```
 
 - Pagination - First 10 tokens:  
-```
-
-curl "[http://localhost:3000/api/tokens?limit=10](http://localhost:3000/api/tokens?limit=10)"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens?limit=10"
+    ```
 
 - Pagination - Next page:  
-```
-
-curl "[http://localhost:3000/api/tokens?limit=10\&cursor=](http://localhost:3000/api/tokens?limit=10&cursor=)\<nextCursor\_value>"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens?limit=10&cursor=<nextCursor_value>"
+    ```
 
 - Combined filters:  
-```
-
-curl "[http://localhost:3000/api/tokens?period=1h\&sortBy=price\_sol\&sortDir=desc\&limit=5](http://localhost:3000/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5)"
-
-```
+    ```sh
+    curl "http://localhost:3000/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5"
+    ```
 
 ---
 
-### 🔹 Example Requests - **Deployed**
+### Example Requests - **Deployed**
 
 - Fetch all tokens:  
-https://real-time-data-aggregation.onrender.com/api/tokens
+  [https://real-time-data-aggregation.onrender.com/api/tokens](https://real-time-data-aggregation.onrender.com/api/tokens)
 
 - Force refresh:  
-https://real-time-data-aggregation.onrender.com/api/tokens/refresh
+  [https://real-time-data-aggregation.onrender.com/api/tokens/refresh](https://real-time-data-aggregation.onrender.com/api/tokens/refresh)
 
 - Filter by period (e.g., 1 hour):  
-https://real-time-data-aggregation.onrender.com/api/tokens?period=1h
+  [https://real-time-data-aggregation.onrender.com/api/tokens?period=1h](https://real-time-data-aggregation.onrender.com/api/tokens?period=1h)
 
 - Sort by price (descending):  
-https://real-time-data-aggregation.onrender.com/api/tokens?sortBy=price_sol&sortDir=desc
+  [https://real-time-data-aggregation.onrender.com/api/tokens?sortBy=price_sol&sortDir=desc](https://real-time-data-aggregation.onrender.com/api/tokens?sortBy=price_sol&sortDir=desc)
 
 - Sort by volume (ascending):  
-https://real-time-data-aggregation.onrender.com/api/tokens?sortBy=volume_sol&sortDir=asc
+  [https://real-time-data-aggregation.onrender.com/api/tokens?sortBy=volume_sol&sortDir=asc](https://real-time-data-aggregation.onrender.com/api/tokens?sortBy=volume_sol&sortDir=asc)
 
 - Pagination - First 10 tokens:  
-https://real-time-data-aggregation.onrender.com/api/tokens?limit=10
+  [https://real-time-data-aggregation.onrender.com/api/tokens?limit=10](https://real-time-data-aggregation.onrender.com/api/tokens?limit=10)
 
 - Pagination - Next page:  
-https://real-time-data-aggregation.onrender.com/api/tokens?limit=10&cursor=<nextCursor_value>
+  [https://real-time-data-aggregation.onrender.com/api/tokens?limit=10&cursor=<nextCursor_value>](https://real-time-data-aggregation.onrender.com/api/tokens?limit=10&cursor=<nextCursor_value>)
 
 - Combined filters:  
-https://real-time-data-aggregation.onrender.com/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5
+  [https://real-time-data-aggregation.onrender.com/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5](https://real-time-data-aggregation.onrender.com/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5)
 
 ---
 
