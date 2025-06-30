@@ -1,5 +1,9 @@
 # Real-time Meme Coin Data Aggregation Service
 
+**Deployed to free hosting:**  
+[URL](https://real-time-data-aggregation.onrender.com/api/tokens)  
+
+
 ## Overview
 
 This service aggregates real-time meme coin data from multiple DEX sources (DexScreener and GeckoTerminal), caches results in Redis, and provides both REST API and WebSocket endpoints for live updates.
