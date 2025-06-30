@@ -1,0 +1,145 @@
+{
+  "info": {
+    "name": "Real-time Meme Coin Data Aggregation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "b8e2e1c7-1234-4cde-9abc-1234567890ab"
+  },
+  "item": [
+    {
+      "name": "Fetch All Tokens",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"]
+        }
+      }
+    },
+    {
+      "name": "Force Refresh Tokens",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens/refresh",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens", "refresh"]
+        }
+      }
+    },
+    {
+      "name": "Filter by Period (1h)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens?period=1h",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"],
+          "query": [
+            { "key": "period", "value": "1h" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Sort by Price (desc)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens?sortBy=price_sol&sortDir=desc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"],
+          "query": [
+            { "key": "sortBy", "value": "price_sol" },
+            { "key": "sortDir", "value": "desc" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Sort by Volume (asc)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens?sortBy=volume_sol&sortDir=asc",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"],
+          "query": [
+            { "key": "sortBy", "value": "volume_sol" },
+            { "key": "sortDir", "value": "asc" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Pagination (first 10 tokens)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens?limit=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"],
+          "query": [
+            { "key": "limit", "value": "10" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Pagination (next page with cursor)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens?limit=10&cursor=<nextCursor_value>",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"],
+          "query": [
+            { "key": "limit", "value": "10" },
+            { "key": "cursor", "value": "<nextCursor_value>" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Combined Filtering, Sorting, Pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "tokens"],
+          "query": [
+            { "key": "period", "value": "1h" },
+            { "key": "sortBy", "value": "price_sol" },
+            { "key": "sortDir", "value": "desc" },
+            { "key": "limit", "value": "5" }
+          ]
+        }
+      }
+    }
+  ]
+}
