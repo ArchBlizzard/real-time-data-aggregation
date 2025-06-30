@@ -1,7 +1,7 @@
 # Real-time Meme Coin Data Aggregation Service
 
 **Deployed to free hosting:**  
-[https://real-time-data-aggregation.onrender.com/api/tokens](https://real-time-data-aggregation.onrender.com/api/tokens)
+[URL](https://real-time-data-aggregation.onrender.com/api/tokens)
 
 ## Overview
 
@@ -110,12 +110,7 @@ Use the included Postman collection (`postman_collection.json`) to test endpoint
     ```sh
     curl "http://localhost:3000/api/tokens?limit=10&cursor=<nextCursor_value>"
     ```
-
-- Combined filters:  
-    ```sh
-    curl "http://localhost:3000/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5"
-    ```
-
+    
 ---
 
 ### Example Requests - **Deployed**
@@ -140,9 +135,6 @@ Use the included Postman collection (`postman_collection.json`) to test endpoint
 
 - Pagination - Next page:  
   [https://real-time-data-aggregation.onrender.com/api/tokens?limit=10&cursor=<nextCursor_value>](https://real-time-data-aggregation.onrender.com/api/tokens?limit=10&cursor=<nextCursor_value>)
-
-- Combined filters:  
-  [https://real-time-data-aggregation.onrender.com/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5](https://real-time-data-aggregation.onrender.com/api/tokens?period=1h&sortBy=price_sol&sortDir=desc&limit=5)
 
 ---
 
