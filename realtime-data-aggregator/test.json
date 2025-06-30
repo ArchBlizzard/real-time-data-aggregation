@@ -1,0 +1,119 @@
+{
+    "tokens": [
+        {
+            "token_address": "sol.token.a11bd.near",
+            "token_name": "Solana",
+            "token_ticker": "SOL",
+            "price_sol": 156.74
+        },
+        {
+            "token_address": "0x634608ed64c61CA9e741F8095193c0bFa0FA19Cc",
+            "token_name": "Solana",
+            "token_ticker": "SOL",
+            "price_sol": 154.4,
+            "sources": [
+                "DexScreener",
+                "DexScreener",
+                "DexScreener"
+            ]
+        },
+        {
+            "token_address": "factory/osmo1n3n75av8awcnw4jl62n3l48e6e4sxqmaf97w5ua6ddu4s475q5qq9udvx4/alloyed/allSOL",
+            "token_name": "Solana",
+            "token_ticker": "SOL",
+            "price_sol": 154.32,
+            "sources": [
+                "DexScreener",
+                "DexScreener"
+            ]
+        },
+        {
+            "token_address": "0x570A5D26f7765Ecb712C0924E4De545B89fD43dF",
+            "token_name": "SOLANA",
+            "token_ticker": "SOL",
+            "price_sol": 154.23,
+            "sources": [
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener"
+            ]
+        },
+        {
+            "token_address": "0x2bcC6D6CdBbDC0a4071e48bb3B969b06B3330c07",
+            "token_name": "Wrapped SOL",
+            "token_ticker": "SOL",
+            "price_sol": 154.23,
+            "sources": [
+                "DexScreener",
+                "DexScreener",
+                "DexScreener",
+                "DexScreener"
+            ]
+        },
+        {
+            "token_address": "22.contract.portalbridge.near",
+            "token_name": "Wrapped SOL",
+            "token_ticker": "SOL",
+            "price_sol": 154.18
+        },
+        {
+            "token_address": "0xd93f7E271cB87c23AaA73edC008A79646d1F9912",
+            "token_name": "Wrapped SOL",
+            "token_ticker": "SOL",
+            "price_sol": 153.42
+        },
+        {
+            "token_address": "0xc9DE0F3e08162312528FF72559db82590b481800",
+            "token_name": "SOL",
+            "token_ticker": "SOL",
+            "price_sol": 153.091
+        },
+        {
+            "token_address": "0xfA54fF1a158B5189Ebba6ae130CEd6bbd3aEA76e",
+            "token_name": "Wrapped SOL",
+            "token_ticker": "SOL",
+            "price_sol": 151.67,
+            "sources": [
+                "DexScreener",
+                "DexScreener"
+            ]
+        },
+        {
+            "token_address": "0x225B86198ba36321a8A840291416aEd62494043f",
+            "token_name": "Wrapped SOL",
+            "token_ticker": "SOL",
+            "price_sol": 151.56
+        },
+        {
+            "token_address": "0x873301F2B4B83FeaFF04121B68eC9231B29Ce0df",
+            "token_name": "SOLANA",
+            "token_ticker": "SOL",
+            "price_sol": 0.0001673,
+            "sources": [
+                "DexScreener",
+                "DexScreener"
+            ]
+        },
+        {
+            "token_address": "EpMYntw4K9m5mZuztdhbvQoVMPf8Bq6XUHkpGjHDpump",
+            "token_name": "Everything, Everywhere, Everyone",
+            "token_ticker": "SOL",
+            "price_sol": 0.0001186
+        },
+        {
+            "token_address": "EbWQwZVqAMfV4Q3JbRh85gXvX1FUVu9Z2iPUPrRaN7s6",
+            "token_name": "SOLCOIN",
+            "token_ticker": "SOL",
+            "price_sol": 0.000003275
+        }
+    ],
+    "nextCursor": null,
+    "total": 13
+}
